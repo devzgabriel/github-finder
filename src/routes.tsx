@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import User from "./pages/User";
-// import TeacherForm from "./pages/TeacherForm";
 
 export default function Routes() {
   return (
