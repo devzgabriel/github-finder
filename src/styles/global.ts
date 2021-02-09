@@ -1,4 +1,19 @@
-import styled, { css } from "styled-components";
+import styled, { css, createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+  *{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background:#f5f5f5;
+    font-size: 14px;
+    color:#333;
+    font-family:"Inter", sans-serif;
+  }
+`;
 
 interface ContainerInterface {
   mode: string;
@@ -10,9 +25,8 @@ interface TextInterface {
 }
 
 export const Container = styled.div<ContainerInterface>`
-  width: 100vw;
-  height: 100vh;
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
 
@@ -31,7 +45,7 @@ export const Container = styled.div<ContainerInterface>`
 `;
 
 export const Text = styled.span<TextInterface>`
-  font-family: "Inter", sans-serif;
+  /* font-family: "Inter", sans-serif; */
   ${(props) =>
     props.font === "bold" &&
     css`
