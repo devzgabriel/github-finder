@@ -96,8 +96,6 @@ export const Form = styled.form`
   justify-content: space-between;
 
   border-radius: 10px;
-
-  /* @media (max-width: 700px) {
-    flex-direction: column;
-  } */
 `;
+
+export const ThemeSwitcher = styled.button``;
