@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 
-import { Container, Text } from "../../styles/global";
+import { Container } from "../../styles/global";
 import Header from "../../components/Header";
+import Card from "../../components/Card";
 
 import { AppContext } from "../../context/AppContext";
-import Button from "../../components/Button";
 
 // import api from "../../services/api";
 
@@ -13,11 +13,18 @@ function User() {
     state: { user },
   } = useContext(AppContext);
 
+  console.log(user);
+
   return (
     <Container id="page-user">
       <Header />
-      <Text>User Page</Text>
-      <Button>Ir para Home</Button>
+      {/* Precisa de um main */}
+      <Card
+        name="Gabriel Silva"
+        username="devzgabriel"
+        avatar=""
+        bio="Looking for a rocket, lorem asdkasjhk jfhnds ajhsdgfkj sdbfkj"
+      />
     </Container>
   );
 }
