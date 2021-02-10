@@ -1,21 +1,23 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 
 import { Container, Text } from "../../styles/global";
+import Header from "../../components/Header";
 
-import { AppContext } from "../../contexts/AppContext";
+import { AppContext } from "../../context/AppContext";
+import Button from "../../components/Button";
 
 // import api from "../../services/api";
 
 function User() {
   const {
-    state: { theme },
+    state: { user },
   } = useContext(AppContext);
 
   return (
-    <Container theme={theme} id="page-user">
-      <Text theme={theme}>User Page</Text>
-      <Link to="/">Ir para Home</Link>
+    <Container id="page-user">
+      <Header />
+      <Text>User Page</Text>
+      <Button>Ir para Home</Button>
     </Container>
   );
 }

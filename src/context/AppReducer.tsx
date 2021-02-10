@@ -5,12 +5,12 @@ interface State {
 
 interface Action {
   type: string;
-  payload: string;
+  payload: any;
 }
 
 export const initialState = {
-  theme: "light",
-  user: "",
+  theme: "dark",
+  user: {},
 };
 
 export default function reducer(state: State, action: Action) {
@@ -26,6 +26,9 @@ export default function reducer(state: State, action: Action) {
     case "UPDATE_USER": {
       const newUser = action.payload;
       return { ...state, user: newUser };
+    }
+    case "RESET_USER": {
+      return { ...state, user: "" };
     }
 
     default:

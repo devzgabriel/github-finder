@@ -8,7 +8,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body{
-    background:#f5f5f5;
+    background:${(props) => props.theme.colors.background};
     font-size: 14px;
     font-family:"Inter", sans-serif;
   }
@@ -29,18 +29,8 @@ export const Container = styled.div<ContainerInterface>`
   display: flex;
   flex: 1;
   flex-direction: column;
-  ${(props) => {
-    switch (props.theme) {
-      case "dark":
-        return css`
-          background: #141414;
-        `;
-      case "light":
-        return css`
-          background: #fff;
-        `;
-    }
-  }};
+
+  background: ${(props) => props.theme.colors.background};
 `;
 
 export const Main = styled.main`
@@ -52,18 +42,7 @@ export const Main = styled.main`
 `;
 
 export const Text = styled.span<TextInterface>`
-  ${(props) => {
-    switch (props.theme) {
-      case "dark":
-        return css`
-          color: #fff;
-        `;
-      case "light":
-        return css`
-          color: #111111;
-        `;
-    }
-  }}
+  color: ${(props) => props.theme.colors.text};
   ${(props) => {
     switch (props.font) {
       case "title":
@@ -80,13 +59,24 @@ export const Text = styled.span<TextInterface>`
         `;
       case "paragraph":
         return css`
-          /* width: 80%; */
           margin: 9rem 0 1.3rem;
           font-weight: 500;
           font-size: 18px;
         `;
+      case "dark-text":
+        return css`
+          font-weight: 500;
+          font-size: 14px;
+          margin-right: 1rem;
+        `;
+      case "obs":
+        return css`
+          margin: 1.5rem 0 0.5rem;
+          font-weight: 400;
+          font-size: 18px;
+        `;
     }
-  }}
+  }};
 `;
 
 export const Form = styled.form`
@@ -98,4 +88,10 @@ export const Form = styled.form`
   border-radius: 10px;
 `;
 
-export const ThemeSwitcher = styled.button``;
+export const ThemeSwitcher = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-top: 6.5rem;
+`;

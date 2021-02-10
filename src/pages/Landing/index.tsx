@@ -1,53 +1,88 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import Switch from "react-switch";
+import { useHistory } from "react-router-dom";
+import { AppContext } from "../../context/AppContext";
+import { ThemeContext } from "styled-components";
 
-import { Container, Main, Text, Form } from "../../styles/global";
+import {
+  Container,
+  Main,
+  Text,
+  Form,
+  ThemeSwitcher,
+} from "../../styles/global";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
-import { AppContext } from "../../contexts/AppContext";
-
-// import api from "../../services/api";
+import api from "../../services/api";
+import useHandleChangeTheme from "../../hooks/usechangeTheme";
 
 function Landing() {
-  const {
-    state: { theme },
-  } = useContext(AppContext);
-
+  const history = useHistory();
   const [username, setUsername] = useState("");
+
+  const { dispatch } = useContext(AppContext);
+  const { colors } = useContext(ThemeContext);
+
+  useEffect(() => {
+    dispatch({ type: "RESET_USER" });
+  }, [dispatch]);
 
   async function searchUser(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (username !== "") {
+      try {
+        //fazer requisição
+
+        const { data } = await api.get(`${username}`).then();
+
+        dispatch({ type: "UPDATE_USER", payload: data });
+        history.push("/user");
+      } catch (error) {
+        setUsername("");
+        alert("Erro ao encontrar usuário!");
+      }
+    }
+    return;
   }
 
   return (
-    <Container theme={theme} id="page-landing">
+    <Container id="page-landing">
       <Main>
-        <Text theme={theme} font="title">
-          GitHub Finder
-        </Text>
-        <Text theme={theme} font="semi-title">
+        <Text font="title">GitHub Finder</Text>
+        <Text font="semi-title">
           Seu site para encontrar programadores de maneira rápida e fácil!
         </Text>
-        <Text theme={theme} font="paragraph">
-          Digite o nome do desenvolvedor abaixo
-        </Text>
+        <Text font="paragraph">Digite o nome do desenvolvedor abaixo</Text>
 
         <Form onSubmit={(event) => searchUser(event)}>
           <Input
             placeholder="ex: devzgabriel"
-            theme={theme}
             value={username}
             onChange={(event: {
               target: { value: React.SetStateAction<string> };
             }) => setUsername(event.target.value)}
           />
 
-          <Button theme={theme}>Encontrar</Button>
+          <Button>Encontrar</Button>
         </Form>
 
-        <Text theme={theme} font="paragraph">
-          Por Gabriel Silva (devzgabriel)
-        </Text>
+        <ThemeSwitcher>
+          <Text font="dark-text">Dark Mode</Text>
+          <Switch
+            onChange={() => {}}
+            checked={false}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={10}
+            width={40}
+            handleDiameter={20}
+            onColor={colors.secundary}
+            offColor={colors.primary}
+            offHandleColor={colors.primary}
+          />
+        </ThemeSwitcher>
+        <Text font="obs">Por Gabriel Silva (devzgabriel)</Text>
       </Main>
     </Container>
   );

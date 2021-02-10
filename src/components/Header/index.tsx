@@ -4,15 +4,11 @@ import { Text, ThemeSwitcher } from "../../styles/global";
 
 import { Header } from "./styles";
 
-interface HeaderInterface {
-  theme: string;
-}
-
-export default function Button({ theme }: HeaderInterface) {
+export default function Button() {
   return (
-    <Header theme={theme}>
+    <Header>
       <Link to="/">
-        <Text theme={theme}>GitHub Finder</Text>
+        <Text>GitHub Finder</Text>
       </Link>
       <ThemeSwitcher />
     </Header>

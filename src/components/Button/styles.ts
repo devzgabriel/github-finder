@@ -1,16 +1,9 @@
-import styled, { css } from "styled-components";
-
-// export const Container = styled.div`
-//   width: 30%;
-//   @media (max-width: 700px) {
-//     width: 100%;
-//   }
-// `;
+import styled from "styled-components";
 
 export const ButtonSubmit = styled.button.attrs({
   type: "submit",
 })`
-  background: ${(props) => props.theme};
+  background: ${(props) => props.theme.colors.background};
   border: none;
   border-radius: 0 10px 10px 0;
   height: 2.8rem;
@@ -21,20 +14,8 @@ export const ButtonSubmit = styled.button.attrs({
   align-items: center;
   justify-content: center;
 
-  ${(props) => {
-    switch (props.theme) {
-      case "dark":
-        return css`
-          background: #d5d5d5;
-          color: #111111;
-        `;
-      case "light":
-        return css`
-          background: #141414;
-          color: #fff;
-        `;
-    }
-  }}
+  background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secundary};
 
   &:hover {
     opacity: 0.8;

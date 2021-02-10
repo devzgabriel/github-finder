@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const TextInput = styled.input`
   padding: 0.5rem 1rem;
@@ -6,18 +6,7 @@ export const TextInput = styled.input`
   border-radius: 10px 0 0 10px;
   font: 400 1.2rem Poppins;
   width: 95%;
-  ${(props) => {
-    switch (props.theme) {
-      case "dark":
-        return css`
-          background: #333;
-          color: #fff;
-        `;
-      case "light":
-        return css`
-          background: #f5f5f5;
-          color: #111111;
-        `;
-    }
-  }}
+
+  background: ${(props) => props.theme.colors.opacity};
+  color: ${(props) => props.theme.colors.text};
 `;
