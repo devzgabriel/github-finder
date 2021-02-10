@@ -10,28 +10,27 @@ export default createGlobalStyle`
   body{
     background:#f5f5f5;
     font-size: 14px;
-    color:#333;
     font-family:"Inter", sans-serif;
   }
 `;
 
 interface ContainerInterface {
-  mode: string;
+  theme: string;
 }
 
 interface TextInterface {
   font?: string;
-  mode: string;
+  theme: string;
 }
 
 export const Container = styled.div<ContainerInterface>`
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex: 1;
-  justify-content: center;
-  align-items: center;
-
+  flex-direction: column;
   ${(props) => {
-    switch (props.mode) {
+    switch (props.theme) {
       case "dark":
         return css`
           background: #141414;
@@ -41,19 +40,20 @@ export const Container = styled.div<ContainerInterface>`
           background: #fff;
         `;
     }
-  }}
+  }};
+`;
+
+export const Main = styled.main`
+  width: 70vw;
+  margin: 5rem 13vw;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Text = styled.span<TextInterface>`
-  /* font-family: "Inter", sans-serif; */
-  ${(props) =>
-    props.font === "bold" &&
-    css`
-      font-weight: bold;
-      font-size: 50px;
-    `}
   ${(props) => {
-    switch (props.mode) {
+    switch (props.theme) {
       case "dark":
         return css`
           color: #fff;
@@ -64,4 +64,40 @@ export const Text = styled.span<TextInterface>`
         `;
     }
   }}
+  ${(props) => {
+    switch (props.font) {
+      case "title":
+        return css`
+          font-weight: bold;
+          font-size: 70px;
+        `;
+      case "semi-title":
+        return css`
+          width: 50%;
+          margin-top: 1.2rem;
+          font-weight: 400;
+          font-size: 24px;
+        `;
+      case "paragraph":
+        return css`
+          /* width: 80%; */
+          margin: 9rem 0 1.3rem;
+          font-weight: 500;
+          font-size: 18px;
+        `;
+    }
+  }}
+`;
+
+export const Form = styled.form`
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 10px;
+
+  /* @media (max-width: 700px) {
+    flex-direction: column;
+  } */
 `;

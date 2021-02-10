@@ -13,8 +13,8 @@ function User() {
   } = useContext(AppContext);
 
   return (
-    <Container mode={theme} id="page-user">
-      <Text mode={theme}>User Page</Text>
+    <Container theme={theme} id="page-user">
+      <Text theme={theme}>User Page</Text>
       <Link to="/">Ir para Home</Link>
     </Container>
   );

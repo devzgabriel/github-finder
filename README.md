@@ -1,6 +1,6 @@
 # GitHub Finder
 
-## In this project you can search for Github users and visit their repositories easily and simply!
+## In this project, you can search for Github users and visit their repositories easily and simply!
 
 <br>
 
