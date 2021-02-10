@@ -23,7 +23,7 @@ interface TextInterface {
   theme: string;
 }
 
-export const Container = styled.div<ContainerInterface>`
+export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -59,7 +59,7 @@ export const Text = styled.span<TextInterface>`
         `;
       case "paragraph":
         return css`
-          margin: 9rem 0 1.3rem;
+          margin: 9rem 0 1rem;
           font-weight: 500;
           font-size: 18px;
         `;
@@ -71,7 +71,7 @@ export const Text = styled.span<TextInterface>`
         `;
       case "obs":
         return css`
-          margin: 1.5rem 0 0.5rem;
+          margin: 1rem 0 0.5rem;
           font-weight: 400;
           font-size: 18px;
         `;
@@ -88,10 +88,38 @@ export const Form = styled.form`
   border-radius: 10px;
 `;
 
+export const ButtonSubmit = styled.button.attrs({
+  type: "submit",
+})`
+  border: none;
+  border-radius: 0 10px 10px 0;
+  height: 2.8rem;
+  padding: 20px;
+  font: 400 1rem Poppins;
+  width: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secundary};
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
 export const ThemeSwitcher = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+`;
+export const Generic = styled.div`
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-  margin-top: 6.5rem;
+  margin-top: 9rem;
 `;

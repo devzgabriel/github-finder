@@ -9,32 +9,33 @@ import {
   Main,
   Text,
   Form,
+  ButtonSubmit,
   ThemeSwitcher,
   Generic,
 } from "../../styles/global";
-import Button from "../../components/Button";
 import Input from "../../components/Input";
 
 import api from "../../services/api";
-import useHandleChangeTheme from "../../hooks/usechangeTheme";
 
 function Landing() {
   const history = useHistory();
   const [username, setUsername] = useState("");
 
-  const { dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
   const { colors } = useContext(ThemeContext);
 
   useEffect(() => {
     dispatch({ type: "RESET_USER" });
   }, [dispatch]);
 
+  function handleToggleTheme() {
+    dispatch({ type: "UPDATE_THEME", payload: null });
+  }
+
   async function searchUser(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (username !== "") {
       try {
-        //fazer requisição
-
         const { data } = await api.get(`${username}`).then();
 
         dispatch({ type: "UPDATE_USER", payload: data });
@@ -65,23 +66,24 @@ function Landing() {
             }) => setUsername(event.target.value)}
           />
 
-          <Button>Encontrar</Button>
+          <ButtonSubmit>Encontrar</ButtonSubmit>
         </Form>
 
         <Generic>
           <ThemeSwitcher>
             <Text font="dark-text">Dark Mode</Text>
             <Switch
-              onChange={() => {}}
-              checked={false}
+              onChange={handleToggleTheme}
+              checked={state.theme === "dark"}
               checkedIcon={false}
               uncheckedIcon={false}
               height={10}
               width={40}
               handleDiameter={20}
-              onColor={colors.secundary}
+              onColor={colors.primary}
               offColor={colors.primary}
               offHandleColor={colors.primary}
+              onHandleColor={colors.primary}
             />
           </ThemeSwitcher>
           <Text font="obs">Por Gabriel Silva</Text>
