@@ -10,6 +10,7 @@ import {
   Text,
   Form,
   ThemeSwitcher,
+  Generic,
 } from "../../styles/global";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
@@ -67,22 +68,24 @@ function Landing() {
           <Button>Encontrar</Button>
         </Form>
 
-        <ThemeSwitcher>
-          <Text font="dark-text">Dark Mode</Text>
-          <Switch
-            onChange={() => {}}
-            checked={false}
-            checkedIcon={false}
-            uncheckedIcon={false}
-            height={10}
-            width={40}
-            handleDiameter={20}
-            onColor={colors.secundary}
-            offColor={colors.primary}
-            offHandleColor={colors.primary}
-          />
-        </ThemeSwitcher>
-        <Text font="obs">Por Gabriel Silva (devzgabriel)</Text>
+        <Generic>
+          <ThemeSwitcher>
+            <Text font="dark-text">Dark Mode</Text>
+            <Switch
+              onChange={() => {}}
+              checked={false}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              height={10}
+              width={40}
+              handleDiameter={20}
+              onColor={colors.secundary}
+              offColor={colors.primary}
+              offHandleColor={colors.primary}
+            />
+          </ThemeSwitcher>
+          <Text font="obs">Por Gabriel Silva</Text>
+        </Generic>
       </Main>
     </Container>
   );
