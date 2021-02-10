@@ -14,10 +14,6 @@ export default createGlobalStyle`
   }
 `;
 
-interface ContainerInterface {
-  theme: string;
-}
-
 interface TextInterface {
   font?: string;
   theme: string;

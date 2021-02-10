@@ -1,6 +1,4 @@
 import React from "react";
-import { Text } from "../../styles/global";
-
 import { CardContainer, CardText } from "./styles";
 
 interface InputInterface {
