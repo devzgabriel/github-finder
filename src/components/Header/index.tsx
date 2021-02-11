@@ -4,7 +4,7 @@ import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
 import { AppContext } from "../../context/AppContext";
 
-import { Text, ThemeSwitcher } from "../../styles/global";
+import { Text, ExampleDiv } from "../../styles/global";
 import { Header, HomeButton } from "./styles";
 
 export default function Button() {
@@ -25,7 +25,7 @@ export default function Button() {
     <Header>
       <HomeButton onClick={handleGoHome}>Ir para Home</HomeButton>
 
-      <ThemeSwitcher>
+      <ExampleDiv>
         <Text font="dark-text">Dark Mode</Text>
         <Switch
           onChange={handleToggleTheme}
@@ -39,7 +39,7 @@ export default function Button() {
           offColor={colors.primary}
           offHandleColor={colors.primary}
         />
-      </ThemeSwitcher>
+      </ExampleDiv>
     </Header>
   );
 }

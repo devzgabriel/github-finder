@@ -10,7 +10,7 @@ import {
   Text,
   Form,
   ButtonSubmit,
-  ThemeSwitcher,
+  ExampleDiv,
   Generic,
 } from "../../styles/global";
 import Input from "../../components/Input";
@@ -70,7 +70,7 @@ function Landing() {
         </Form>
 
         <Generic>
-          <ThemeSwitcher>
+          <ExampleDiv>
             <Text font="dark-text">Dark Mode</Text>
             <Switch
               onChange={handleToggleTheme}
@@ -85,7 +85,7 @@ function Landing() {
               offHandleColor={colors.primary}
               onHandleColor={colors.primary}
             />
-          </ThemeSwitcher>
+          </ExampleDiv>
           <Text font="obs">Por Gabriel Silva</Text>
         </Generic>
       </Main>

@@ -9,4 +9,8 @@ export const TextInput = styled.input`
 
   background: ${(props) => props.theme.colors.opacity};
   color: ${(props) => props.theme.colors.text};
+
+  @media (max-width: 700px) {
+    border-radius: 10px;
+  }
 `;

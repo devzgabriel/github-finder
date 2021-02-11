@@ -30,10 +30,14 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   width: 70vw;
-  margin: 5rem 13vw;
+  margin: 5rem 12vw;
 
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 700px) {
+    margin-top: 3rem;
+  }
 `;
 
 export const Text = styled.span<TextInterface>`
@@ -51,12 +55,18 @@ export const Text = styled.span<TextInterface>`
           margin-top: 1.2rem;
           font-weight: 400;
           font-size: 24px;
+          @media (max-width: 700px) {
+            width: 90%;
+          }
         `;
       case "paragraph":
         return css`
           margin: 9rem 0 1rem;
           font-weight: 500;
           font-size: 18px;
+          @media (max-width: 700px) {
+            margin: 7rem auto 1rem;
+          }
         `;
       case "dark-text":
         return css`
@@ -81,6 +91,11 @@ export const Form = styled.form`
   justify-content: space-between;
 
   border-radius: 10px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 export const ButtonSubmit = styled.button.attrs({
@@ -102,19 +117,29 @@ export const ButtonSubmit = styled.button.attrs({
   &:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 700px) {
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
 `;
 
-export const ThemeSwitcher = styled.div`
+export const ExampleDiv = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
-export const Generic = styled.div`
-  width: 70%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+
+export const Generic = styled(ExampleDiv)`
+  width: 49%;
   justify-content: space-between;
 
-  margin-top: 9rem;
+  position: absolute;
+  bottom: 2rem;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    margin-top: 2rem;
+    position: static;
+  }
 `;
