@@ -1,6 +1,12 @@
 import React from "react";
 
-import { RepoContainer, ReposText, Link } from "./styles";
+import {
+  RepoContainer,
+  Generic,
+  ReposText,
+  Link,
+  GenericScore,
+} from "./styles";
 
 export interface RepoInterface {
   name: string;
@@ -19,14 +25,14 @@ export default function Repository({
 }: RepoInterface) {
   return (
     <RepoContainer>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <Generic>
         <ReposText font="name">{name}</ReposText>
         <ReposText font="language">{language}</ReposText>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      </Generic>
+      <GenericScore>
         <ReposText font="stars">Stars: {stars}</ReposText>
         <ReposText font="stars">Forks: {forks}</ReposText>
-      </div>
+      </GenericScore>
 
       <Link href={url}>
         <ReposText font="link">Ver mais</ReposText>

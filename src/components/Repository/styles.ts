@@ -18,6 +18,16 @@ export const RepoContainer = styled.div`
   background: ${(props) => props.theme.colors.opacity};
 `;
 
+export const Generic = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const GenericScore = styled(Generic)`
+  position: absolute;
+  margin-left: 25rem;
+`;
+
 export const ReposText = styled.span<TextInterface>`
   border: none;
   font: 400 1.2rem Poppins;
