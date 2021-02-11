@@ -6,7 +6,25 @@
 
 ### See how to do:
 
-_Future screenshots here_
+<p align="center">
+  <img alt="gitFinder" src=".github/lightLanding.png" width="100%">
+</p> 
+<br/>
+<p align="center">
+  <img alt="gitFinder" src=".github/lightUser.png" width="100%">
+</p> 
+<br/>
+
+### We also have dark Mode
+
+<p align="center">
+  <img alt="gitFinder" src=".github/darkLanding.png" width="100%">
+</p> 
+<br/>
+<p align="center">
+  <img alt="gitFinder" src=".github/darkUser.png" width="100%">
+</p> 
+<br/>
 
 ## Getting Started with Create React App
 

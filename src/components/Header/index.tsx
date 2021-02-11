@@ -35,7 +35,7 @@ export default function Button() {
           height={10}
           width={40}
           handleDiameter={20}
-          onColor={colors.secundary}
+          onColor={colors.primary}
           offColor={colors.primary}
           offHandleColor={colors.primary}
         />
