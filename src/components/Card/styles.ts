@@ -25,13 +25,13 @@ export const CardText = styled.span<TextInterface>`
     switch (props.font) {
       case "name":
         return css`
-          margin-top: 1rem;
+          margin: 1rem auto 0;
           font-weight: bold;
           font-size: 26px;
         `;
       case "username":
         return css`
-          margin-top: 0.3rem;
+          margin: 0.3rem auto 0;
           font-weight: 700;
           font-size: 20px;
         `;
@@ -43,13 +43,13 @@ export const CardText = styled.span<TextInterface>`
         `;
       case "repos":
         return css`
-          margin-top: 1rem;
-          font-weight: 400;
+          margin: 1rem auto 0;
+          font-weight: 700;
           font-size: 18px;
         `;
       case "bio":
         return css`
-          margin-top: 0.8rem;
+          margin-top: 1.2rem;
           font-weight: 400;
           font-size: 16px;
         `;
@@ -67,7 +67,7 @@ export const Generic = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
 
   color: ${(props) => props.theme.colors.text};
@@ -98,6 +98,7 @@ export const Avatar = styled.img`
   width: 12rem;
   height: 12rem;
   border-radius: 20%;
+  margin: 0 auto;
 
   background: ${(props) => props.theme.colors.secundary};
 `;
