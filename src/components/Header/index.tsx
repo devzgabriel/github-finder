@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
 import { AppContext } from "../../context/AppContext";
 
 import { Text, ThemeSwitcher } from "../../styles/global";
-
 import { Header, HomeButton } from "./styles";
 
 export default function Button() {
+  const history = useHistory();
+
   const { state, dispatch } = useContext(AppContext);
   const { colors } = useContext(ThemeContext);
 
@@ -15,9 +17,13 @@ export default function Button() {
     dispatch({ type: "UPDATE_THEME", payload: null });
   }
 
+  function handleGoHome() {
+    history.push("/");
+  }
+
   return (
     <Header>
-      <HomeButton>Ir para Home</HomeButton>
+      <HomeButton onClick={handleGoHome}>Ir para Home</HomeButton>
 
       <ThemeSwitcher>
         <Text font="dark-text">Dark Mode</Text>
