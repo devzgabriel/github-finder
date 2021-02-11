@@ -7,14 +7,13 @@ import { AppContext } from "../../context/AppContext";
 
 import {
   Container,
-  Main,
   Text,
   Form,
   ButtonSubmit,
   ExampleDiv,
   Generic,
 } from "../../styles/global";
-import { BgImg } from "./styles";
+import { BgImg, LandingMain } from "./styles";
 import Input from "../../components/Input";
 
 import bgDark from "../../assets/bgDark.svg";
@@ -53,7 +52,7 @@ function Landing() {
 
   return (
     <Container id="page-landing">
-      <Main>
+      <LandingMain>
         <Text font="title">GitHub Finder</Text>
         <Text font="semi-title">
           Seu site para encontrar programadores de maneira rápida e fácil!
@@ -91,7 +90,7 @@ function Landing() {
           </ExampleDiv>
           <Text font="obs">Por Gabriel Silva</Text>
         </Generic>
-      </Main>
+      </LandingMain>
       <BgImg src={background} />
     </Container>
   );

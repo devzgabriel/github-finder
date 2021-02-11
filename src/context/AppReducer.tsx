@@ -21,7 +21,7 @@ interface Action {
 
 function getStorageTheme() {
   return (
-    JSON.parse(String(localStorage.getItem("ghfinder:localTheme"))) || "dark"
+    JSON.parse(String(localStorage.getItem("ghfinder:localTheme"))) || "light"
   );
 }
 function getStorageUser() {

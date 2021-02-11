@@ -9,7 +9,6 @@ declare module "styled-components" {
       secundary: string;
       opacity: string;
       background: string;
-      bgImg: string;
       text: string;
     };
   }

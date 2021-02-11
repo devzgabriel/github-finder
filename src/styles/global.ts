@@ -28,18 +28,6 @@ export const Container = styled.div`
   background: ${(props) => props.theme.colors.background};
 `;
 
-export const Main = styled.main`
-  width: 70vw;
-  margin: 5rem 12vw;
-
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 700px) {
-    margin-top: 3rem;
-  }
-`;
-
 export const Text = styled.span<TextInterface>`
   color: ${(props) => props.theme.colors.text};
   ${(props) => {
