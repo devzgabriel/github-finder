@@ -13,17 +13,30 @@ function User() {
     state: { user },
   } = useContext(AppContext);
 
-  console.log(user);
+  const {
+    login: username,
+    avatar_url,
+    url,
+    name,
+    bio,
+    public_repos,
+    followers,
+    following,
+  } = user;
 
   return (
     <Container id="page-user">
       <Header />
       {/* Precisa de um main */}
       <Card
-        name="Gabriel Silva"
-        username="devzgabriel"
-        avatar=""
-        bio="Looking for a rocket, lorem asdkasjhk jfhnds ajhsdgfkj sdbfkj"
+        name={name}
+        username={username}
+        avatar={avatar_url}
+        bio={bio}
+        url={url}
+        public_repos={public_repos}
+        followers={followers}
+        following={following}
       />
     </Container>
   );

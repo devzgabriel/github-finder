@@ -16,7 +16,6 @@ export default createGlobalStyle`
 
 interface TextInterface {
   font?: string;
-  theme: string;
 }
 
 export const Container = styled.div`
