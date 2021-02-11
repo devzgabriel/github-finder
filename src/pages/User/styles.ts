@@ -5,10 +5,14 @@ interface TextInterface {
 }
 
 export const UserMain = styled.div`
-  width: 90vw;
+  width: 95vw;
   margin: 40px auto;
   display: flex;
   justify-content: space-around;
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ReposSection = styled.section`

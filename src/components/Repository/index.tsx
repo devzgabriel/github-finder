@@ -2,10 +2,11 @@ import React from "react";
 
 import {
   RepoContainer,
-  Generic,
+  GenericInfo,
+  ContainerStats,
+  GenericStats,
   ReposText,
   Link,
-  GenericScore,
 } from "./styles";
 
 export interface RepoInterface {
@@ -25,18 +26,20 @@ export default function Repository({
 }: RepoInterface) {
   return (
     <RepoContainer>
-      <Generic>
+      <GenericInfo>
         <ReposText font="name">{name}</ReposText>
         <ReposText font="language">{language}</ReposText>
-      </Generic>
-      <GenericScore>
-        <ReposText font="stars">Stars: {stars}</ReposText>
-        <ReposText font="stars">Forks: {forks}</ReposText>
-      </GenericScore>
+      </GenericInfo>
+      <ContainerStats>
+        <GenericStats>
+          <ReposText font="stars">Stars: {stars}</ReposText>
+          <ReposText font="stars">Forks: {forks}</ReposText>
+        </GenericStats>
 
-      <Link href={url}>
-        <ReposText font="link">Ver mais</ReposText>
-      </Link>
+        <Link href={url}>
+          <ReposText font="link">Ver mais</ReposText>
+        </Link>
+      </ContainerStats>
     </RepoContainer>
   );
 }

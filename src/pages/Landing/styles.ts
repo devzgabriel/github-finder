@@ -5,6 +5,9 @@ export const BgImg = styled.img`
   position: fixed;
   right: -23%;
   top: 4vw;
+  @media (max-width: 800px) {
+    right: 200%;
+  }
 `;
 
 export const LandingMain = styled.main`

@@ -5,14 +5,25 @@ interface TextInterface {
 }
 
 export const CardContainer = styled.div`
-  width: 30%;
-  max-height: 82vh;
+  width: 50%;
+
   padding: 1.5rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 
   background: ${(props) => props.theme.colors.opacity};
+
+  @media (min-width: 1280px) {
+    width: 30%;
+    max-height: 85vh;
+  }
+  @media (max-width: 700px) {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const CardText = styled.span<TextInterface>`

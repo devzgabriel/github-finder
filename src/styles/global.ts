@@ -99,6 +99,8 @@ export const ButtonSubmit = styled.button.attrs({
   align-items: center;
   justify-content: center;
 
+  cursor: pointer;
+
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.secundary};
 

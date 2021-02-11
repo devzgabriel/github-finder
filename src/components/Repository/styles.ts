@@ -16,16 +16,38 @@ export const RepoContainer = styled.div`
   justify-content: space-between;
 
   background: ${(props) => props.theme.colors.opacity};
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 export const Generic = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 `;
 
-export const GenericScore = styled(Generic)`
-  position: absolute;
-  margin-left: 25rem;
+export const GenericStats = styled(Generic)`
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
+export const GenericInfo = styled(Generic)`
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const ContainerStats = styled(Generic)`
+  width: 50%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `;
 
 export const ReposText = styled.span<TextInterface>`
@@ -80,5 +102,13 @@ export const Link = styled.a`
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 1080px) {
+    width: 70%;
+  }
+  @media (max-width: 700px) {
+    margin-top: 1rem;
+    width: 100%;
   }
 `;
