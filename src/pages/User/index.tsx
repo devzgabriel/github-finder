@@ -27,15 +27,15 @@ function User() {
     following,
   } = user;
 
-  async function searchRepos() {
-    const response = await api.get(`${username}/repos`).then();
+  async function searchRepos(dev: string) {
+    const response = await api.get(`${dev}/repos`).then();
     setRepos(response.data);
   }
 
   useEffect(() => {
-    searchRepos();
+    searchRepos(username);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
   return (
     <Container id="page-user">

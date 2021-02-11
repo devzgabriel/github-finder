@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import Switch from "react-switch";
 import { useHistory } from "react-router-dom";
 import { AppContext } from "../../context/AppContext";
@@ -23,10 +23,6 @@ function Landing() {
 
   const { state, dispatch } = useContext(AppContext);
   const { colors } = useContext(ThemeContext);
-
-  useEffect(() => {
-    dispatch({ type: "RESET_USER" });
-  }, [dispatch]);
 
   function handleToggleTheme() {
     dispatch({ type: "UPDATE_THEME", payload: null });
