@@ -25,7 +25,7 @@ export default function Input({
     <CardContainer>
       <Avatar src={avatar} alt={name} />
       <CardText font="name">{name}</CardText>
-      <CardText font="username">{username}</CardText>
+      <CardText font="username">@{username}</CardText>
 
       <Generic>
         <CardText font="numbers">Followers: {followers}</CardText>

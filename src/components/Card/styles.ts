@@ -5,13 +5,12 @@ interface TextInterface {
 }
 
 export const CardContainer = styled.div`
-  width: 70%;
+  width: 30%;
+  max-height: 82vh;
   padding: 1.5rem;
-  border: none;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  margin: 40px auto;
 
   background: ${(props) => props.theme.colors.opacity};
 `;
@@ -39,8 +38,8 @@ export const CardText = styled.span<TextInterface>`
       case "numbers":
         return css`
           margin-top: 1.2rem;
-          font-weight: 400;
-          font-size: 20px;
+          font-weight: 700;
+          font-size: 18px;
         `;
       case "repos":
         return css`
@@ -69,7 +68,7 @@ export const Generic = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
+  width: 100%;
 
   color: ${(props) => props.theme.colors.text};
 `;
