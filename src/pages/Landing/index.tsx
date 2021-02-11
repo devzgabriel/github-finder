@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import Switch from "react-switch";
 import { useHistory } from "react-router-dom";
-import { AppContext } from "../../context/AppContext";
+
 import { ThemeContext } from "styled-components";
+import { AppContext } from "../../context/AppContext";
 
 import {
   Container,
@@ -13,7 +14,11 @@ import {
   ExampleDiv,
   Generic,
 } from "../../styles/global";
+import { BgImg } from "./styles";
 import Input from "../../components/Input";
+
+import bgDark from "../../assets/bgDark.svg";
+import bgLight from "../../assets/bgLight.svg";
 
 import api from "../../services/api";
 
@@ -23,6 +28,8 @@ function Landing() {
 
   const { state, dispatch } = useContext(AppContext);
   const { colors } = useContext(ThemeContext);
+
+  const background = state.theme === "light" ? bgLight : bgDark;
 
   function handleToggleTheme() {
     dispatch({ type: "UPDATE_THEME", payload: null });
@@ -85,6 +92,7 @@ function Landing() {
           <Text font="obs">Por Gabriel Silva</Text>
         </Generic>
       </Main>
+      <BgImg src={background} />
     </Container>
   );
 }
