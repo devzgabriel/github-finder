@@ -4,7 +4,7 @@
 
 <br>
 
-### You can access: [GitHub Finder to try find someone](https://github-finder.devzgabriel.vercel.app/) to try find someone.
+### You can access: [GitHub Finder](https://github-finder.devzgabriel.vercel.app/) to try find someone.
 
 <br>
 
