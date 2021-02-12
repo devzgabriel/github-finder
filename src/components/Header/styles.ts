@@ -3,14 +3,16 @@ import styled from "styled-components";
 export const Header = styled.div`
   width: 100%;
   height: 12vh;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 2rem;
-
   background: ${(props) => props.theme.colors.opacity};
   color: ${(props) => props.theme.colors.primary};
+  @media (max-width: 700px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const HomeButton = styled.button`

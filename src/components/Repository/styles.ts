@@ -18,6 +18,8 @@ export const RepoContainer = styled.div`
   background: ${(props) => props.theme.colors.opacity};
   @media (max-width: 700px) {
     flex-direction: column;
+    padding: 1rem 0;
+    width: 94vw;
   }
 `;
 
@@ -105,6 +107,7 @@ export const Link = styled.a`
   }
 
   @media (max-width: 1080px) {
+    margin: 0;
     width: 70%;
   }
   @media (max-width: 700px) {

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import { Container } from "../../styles/global";
+import Loading from "../../components/Loading";
 import Header from "../../components/Header";
 import Card from "../../components/Card";
 import Repository, { RepoInterface } from "../../components/Repository";
@@ -69,6 +70,7 @@ function User() {
           })}
         </ReposSection>
       </UserMain>
+      <Loading />
     </Container>
   );
 }
