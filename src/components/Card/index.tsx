@@ -32,7 +32,7 @@ export default function Input({
         <CardText font="numbers">Following: {following}</CardText>
       </Generic>
 
-      <CardText font="repos">Reposittórios públicos: {public_repos}</CardText>
+      <CardText font="repos">Repositórios públicos: {public_repos}</CardText>
       <CardText font="bio">{bio}</CardText>
       <Link href={url}>
         <CardText font="link">Ver Perfil</CardText>
