@@ -34,7 +34,7 @@ export default function Input({
 
       <CardText font="repos">Repositórios públicos: {public_repos}</CardText>
       <CardText font="bio">{bio}</CardText>
-      <Link href={url}>
+      <Link href={url} target="_blank" rel="external">
         <CardText font="link">Ver Perfil</CardText>
       </Link>
     </CardContainer>

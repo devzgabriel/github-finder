@@ -36,7 +36,7 @@ export default function Repository({
           <ReposText font="stars">Forks: {forks}</ReposText>
         </GenericStats>
 
-        <Link href={url}>
+        <Link href={url} target="_blank" rel="external">
           <ReposText font="link">Ver mais</ReposText>
         </Link>
       </ContainerStats>
