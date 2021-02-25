@@ -11,7 +11,8 @@ interface CardInterface {
   followers: number;
   following: number;
 }
-export default function Input({
+
+export default function Card({
   name,
   username,
   avatar,

@@ -5,9 +5,9 @@ import { ThemeContext } from "styled-components";
 import { AppContext } from "../../context/AppContext";
 
 import { Text, ExampleDiv } from "../../styles/global";
-import { Header, HomeButton } from "./styles";
+import { HeaderContainer, HomeButton } from "./styles";
 
-export default function Button() {
+export default function Header() {
   const history = useHistory();
 
   const { state, dispatch } = useContext(AppContext);
@@ -22,7 +22,7 @@ export default function Button() {
   }
 
   return (
-    <Header>
+    <HeaderContainer>
       <HomeButton onClick={handleGoHome}>Ir para Home</HomeButton>
 
       <ExampleDiv>
@@ -40,6 +40,6 @@ export default function Button() {
           offHandleColor={colors.primary}
         />
       </ExampleDiv>
-    </Header>
+    </HeaderContainer>
   );
 }
