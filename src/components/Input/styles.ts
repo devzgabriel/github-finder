@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const TextInput = styled.input`
   padding: 0.5rem 1rem;
@@ -13,4 +13,4 @@ export const TextInput = styled.input`
   @media (max-width: 700px) {
     border-radius: 10px;
   }
-`;
+`

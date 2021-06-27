@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 interface TextInterface {
-  font?: string;
+  font?: string
 }
 
 export const CardContainer = styled.div`
@@ -14,17 +14,17 @@ export const CardContainer = styled.div`
   margin-bottom: 3rem;
 
   background: ${(props) => props.theme.colors.opacity};
+  height: fit-content;
 
   @media (min-width: 1280px) {
     width: 30%;
-    max-height: 85vh;
   }
   @media (max-width: 700px) {
     width: 90%;
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 
 export const CardText = styled.span<TextInterface>`
   border: none;
@@ -34,45 +34,45 @@ export const CardText = styled.span<TextInterface>`
 
   ${(props) => {
     switch (props.font) {
-      case "name":
+      case 'name':
         return css`
           margin: 1rem auto 0;
           font-weight: bold;
           font-size: 26px;
-        `;
-      case "username":
+        `
+      case 'username':
         return css`
           margin: 0.3rem auto 0;
           font-weight: 700;
           font-size: 20px;
-        `;
-      case "numbers":
+        `
+      case 'numbers':
         return css`
           margin-top: 1.2rem;
           font-weight: 700;
           font-size: 18px;
-        `;
-      case "repos":
+        `
+      case 'repos':
         return css`
           margin: 1rem auto 0;
           font-weight: 700;
           font-size: 18px;
-        `;
-      case "bio":
+        `
+      case 'bio':
         return css`
           margin-top: 1.2rem;
           font-weight: 400;
           font-size: 16px;
-        `;
-      case "link":
+        `
+      case 'link':
         return css`
           font-weight: 700;
           font-size: 16px;
           color: ${(props) => props.theme.colors.secundary};
-        `;
+        `
     }
   }}
-`;
+`
 
 export const Generic = styled.div`
   display: flex;
@@ -83,7 +83,7 @@ export const Generic = styled.div`
   width: 100%;
 
   color: ${(props) => props.theme.colors.text};
-`;
+`
 
 export const Link = styled.a`
   text-decoration: none;
@@ -104,7 +104,7 @@ export const Link = styled.a`
   &:hover {
     opacity: 0.7;
   }
-`;
+`
 
 export const Avatar = styled.img`
   width: 12rem;
@@ -113,4 +113,4 @@ export const Avatar = styled.img`
   margin: 0 auto;
 
   background: ${(props) => props.theme.colors.secundary};
-`;
+`

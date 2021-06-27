@@ -1,21 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from 'react'
 
-import { Container } from "../../styles/global";
-import Loading from "../../components/Loading";
-import Header from "../../components/Header";
-import Card from "../../components/Card";
-import Repository, { RepoInterface } from "../../components/Repository";
+import { Container } from '../../styles/global'
+import Loading from '../../components/Loading'
+import Header from '../../components/Header'
+import Card from '../../components/Card'
+import Repository, { RepoInterface } from '../../components/Repository'
 
-import { AppContext } from "../../context/AppContext";
-import { ReposSection, UserMain, ReposText } from "./styles";
+import { AppContext } from '../../context/AppContext'
+import { ReposSection, UserMain, ReposText } from './styles'
 
-import api from "../../services/api";
+import api from '../../services/api'
 
 function User() {
-  const [repos, setRepos] = useState<RepoInterface[]>([]);
+  const [repos, setRepos] = useState<RepoInterface[]>([])
   const {
     state: { user },
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const {
     login: username,
@@ -26,20 +26,19 @@ function User() {
     public_repos,
     followers,
     following,
-  } = user;
+  } = user
 
   async function searchRepos(dev: string) {
-    const response = await api.get(`${dev}/repos`).then();
-    setRepos(response.data);
+    const response = await api.get(`${dev}/repos`).then()
+    setRepos(response.data)
   }
 
   useEffect(() => {
-    searchRepos(username);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
+    searchRepos(username)
+  }, [username])
 
   return (
-    <Container id="page-user">
+    <Container id='page-user'>
       <Header />
       <UserMain>
         <Card
@@ -66,13 +65,13 @@ function User() {
                 stargazers_count={repo.stargazers_count}
                 forks={repo.forks}
               />
-            );
+            )
           })}
         </ReposSection>
       </UserMain>
       <Loading />
     </Container>
-  );
+  )
 }
 
-export default User;
+export default User

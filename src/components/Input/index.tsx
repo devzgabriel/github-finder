@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-import { TextInput } from "./styles";
+import { TextInput } from './styles'
 
 interface InputInterface {
-  placeholder: string;
-  value: string;
-  onChange: any;
+  placeholder: string
+  value: string
+  onChange: any
 }
 
 export default function Input({
@@ -15,5 +15,5 @@ export default function Input({
 }: InputInterface) {
   return (
     <TextInput placeholder={placeholder} value={value} onChange={onChange} />
-  );
+  )
 }

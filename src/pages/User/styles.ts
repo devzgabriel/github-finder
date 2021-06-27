@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface TextInterface {
-  font?: string;
+  font?: string
 }
 
 export const UserMain = styled.div`
@@ -13,14 +13,14 @@ export const UserMain = styled.div`
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 
 export const ReposSection = styled.section`
   width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 export const ReposText = styled.span<TextInterface>`
   border: none;
@@ -31,4 +31,4 @@ export const ReposText = styled.span<TextInterface>`
   font-size: 26px;
 
   color: ${(props) => props.theme.colors.text};
-`;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const BgImg = styled.img`
   width: 45vw;
@@ -8,7 +8,7 @@ export const BgImg = styled.img`
   @media (max-width: 800px) {
     right: 200%;
   }
-`;
+`
 
 export const LandingMain = styled.main`
   width: 70vw;
@@ -20,4 +20,4 @@ export const LandingMain = styled.main`
   @media (max-width: 700px) {
     margin-top: 3rem;
   }
-`;
+`

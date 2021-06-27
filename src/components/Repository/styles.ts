@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 interface TextInterface {
-  font?: string;
+  font?: string
 }
 
 export const RepoContainer = styled.div`
@@ -21,24 +21,24 @@ export const RepoContainer = styled.div`
     padding: 1rem 0;
     width: 94vw;
   }
-`;
+`
 
 export const Generic = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-`;
+`
 
 export const GenericStats = styled(Generic)`
   @media (max-width: 1080px) {
     display: none;
   }
-`;
+`
 export const GenericInfo = styled(Generic)`
   width: 50%;
   flex-direction: column;
   justify-content: space-between;
-`;
+`
 
 export const ContainerStats = styled(Generic)`
   width: 50%;
@@ -50,7 +50,7 @@ export const ContainerStats = styled(Generic)`
     flex-direction: column;
     align-items: flex-end;
   }
-`;
+`
 
 export const ReposText = styled.span<TextInterface>`
   border: none;
@@ -60,31 +60,31 @@ export const ReposText = styled.span<TextInterface>`
 
   ${(props) => {
     switch (props.font) {
-      case "name":
+      case 'name':
         return css`
           font-weight: bold;
           font-size: 20px;
-        `;
-      case "language":
+        `
+      case 'language':
         return css`
           margin-top: 0.3rem;
           font-weight: 400;
           font-size: 16px;
-        `;
-      case "stars":
+        `
+      case 'stars':
         return css`
           font-weight: 400;
           font-size: 16px;
-        `;
-      case "link":
+        `
+      case 'link':
         return css`
           font-weight: 700;
           font-size: 16px;
           color: ${(props) => props.theme.colors.secundary};
-        `;
+        `
     }
   }}
-`;
+`
 
 export const Link = styled.a`
   text-decoration: none;
@@ -114,4 +114,4 @@ export const Link = styled.a`
     margin-top: 1rem;
     width: 100%;
   }
-`;
+`

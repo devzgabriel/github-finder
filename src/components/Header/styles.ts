@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
   @media (max-width: 700px) {
     padding: 0 1rem;
   }
-`;
+`
 
 export const HomeButton = styled.button`
   background: ${(props) => props.theme.colors.opacity};
@@ -31,4 +31,4 @@ export const HomeButton = styled.button`
   &:hover {
     opacity: 0.8;
   }
-`;
+`

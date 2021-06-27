@@ -1,4 +1,4 @@
-import styled, { css, createGlobalStyle } from "styled-components";
+import styled, { css, createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   *{
@@ -12,10 +12,10 @@ export default createGlobalStyle`
     font-size: 14px;
     font-family:"Inter", sans-serif;
   }
-`;
+`
 
 interface TextInterface {
-  font?: string;
+  font?: string
 }
 
 export const Container = styled.div`
@@ -26,18 +26,18 @@ export const Container = styled.div`
   flex-direction: column;
 
   background: ${(props) => props.theme.colors.background};
-`;
+`
 
 export const Text = styled.span<TextInterface>`
   color: ${(props) => props.theme.colors.text};
   ${(props) => {
     switch (props.font) {
-      case "title":
+      case 'title':
         return css`
           font-weight: bold;
           font-size: 70px;
-        `;
-      case "semi-title":
+        `
+      case 'semi-title':
         return css`
           width: 50%;
           margin-top: 1.2rem;
@@ -46,8 +46,8 @@ export const Text = styled.span<TextInterface>`
           @media (max-width: 700px) {
             width: 90%;
           }
-        `;
-      case "paragraph":
+        `
+      case 'paragraph':
         return css`
           margin: 9rem 0 1rem;
           font-weight: 500;
@@ -55,22 +55,22 @@ export const Text = styled.span<TextInterface>`
           @media (max-width: 700px) {
             margin: 7rem auto 1rem;
           }
-        `;
-      case "dark-text":
+        `
+      case 'dark-text':
         return css`
           font-weight: 500;
           font-size: 14px;
           margin-right: 1rem;
-        `;
-      case "obs":
+        `
+      case 'obs':
         return css`
           margin: 1rem 0 0.5rem;
           font-weight: 400;
           font-size: 18px;
-        `;
+        `
     }
   }};
-`;
+`
 
 export const Form = styled.form`
   width: 70%;
@@ -84,10 +84,10 @@ export const Form = styled.form`
     width: 90%;
     margin: 0 auto;
   }
-`;
+`
 
 export const ButtonSubmit = styled.button.attrs({
-  type: "submit",
+  type: 'submit',
 })`
   border: none;
   border-radius: 0 10px 10px 0;
@@ -112,13 +112,13 @@ export const ButtonSubmit = styled.button.attrs({
     border-radius: 10px;
     margin-top: 1rem;
   }
-`;
+`
 
 export const ExampleDiv = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`;
+`
 
 export const Generic = styled(ExampleDiv)`
   width: 49%;
@@ -132,4 +132,4 @@ export const Generic = styled(ExampleDiv)`
     margin-top: 2rem;
     position: static;
   }
-`;
+`
